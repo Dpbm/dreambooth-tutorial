@@ -1,0 +1,6 @@
+*
+.hidden
+!/**/
+!readme.md
+!/assets/steps/*.png
+!.gitignore
