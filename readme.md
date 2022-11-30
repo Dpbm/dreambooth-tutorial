@@ -95,6 +95,14 @@ Se não souber por onde começar use algum site, como o [Lexica](https://lexica.
 
 `OBS: lembre-se sempre de adicionar o nome da sua token no texto que você vai colocar como entrada(prompt), dessa forma ele vai, de fato, gerar uma imagem com você`
 
+## Problemas
+
+Caso você encontre alguma dificuldade na execução do tutorial, sinta-se à vontade para abrir uma nova `ISSUE`.
+
+Já se você  encontrou algum problema e sabe como solucionar, também sinta-se à vontade para criar um `PULL REQUEST`.
+
+`OBS: Tome cuidado para não criar duplicatas`
+
 ## Créditos
 
 Fiz esse tutorial após ver [alguns stories](https://www.instagram.com/stories/highlights/18303061516074788/) da [Gi Bordignon](https://www.instagram.com/spacecoding/)(aka spacecoding), por favor, dê uma olhada nos perfis dela, vale a pena ;)
