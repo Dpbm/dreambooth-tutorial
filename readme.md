@@ -37,7 +37,7 @@ Com isso então, podemos utilizar um modelo já treinado para fazer nossas image
 
 4) Crie uma token no [HuggingFace](https://huggingface.co/settings/tokens), colocando um nome qualquer para ela e dando a permissão de `escrita(write)` (lembre-se de copiar a token e o nome dela, depois vamos usar essas informações no modelo)
 
-![token](./assets/steps/token.png)
+![criando a token](./assets/steps/token.png)
 
 5) Entre [aqui](https://huggingface.co/runwayml/stable-diffusion-v1-5) e clique em aceitar, nessa parte você permite que o modelo interaja com sua conta do `HuggingFace`
 
@@ -45,11 +45,11 @@ Com isso então, podemos utilizar um modelo já treinado para fazer nossas image
 [![DreamBooth Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb)
 
 7) coloque sua token criada no `HuggingFace` aqui:
-![add token](./assets/steps/add_token.png)
+![adicionando a token no script](./assets/steps/add_token.png)
 
 8) chegando nessa parte:
 
-![change here token name](./assets/steps/change_here_token_name.png)
+![adicionando o token name no script](./assets/steps/change_here_token_name.png)
 
 mude o código para esse abaixo (lembre de trocar o {NOME_DA_SUA_TOKEN_AQUI} para o nome que você colocou na sua token do `HuggingFace`)
 
@@ -75,11 +75,11 @@ with open("concepts_list.json", "w") as f:
 
 Você verá que do lado direito você tem algumas pastas, entre em `data > {NOME_DA_SUA_TOKEN}` e aí dentro você arrasta todas aquelas fotos com `512 x 512 px`
 
-![images folder](./assets/steps/images_folder.png)
+![colocando as imagens na pasta](./assets/steps/images_folder.png)
 
 9) Insira aqui o valor: `stable_diffusion_weights/zwx`
 
-![last modification](./assets/steps/last_modification.png)
+![adicionando o caminho para os pesos](./assets/steps/last_modification.png)
 
 
 10) rode todas as células apertando `ctrl + F9` ou indo em `Runtime > Run all`
@@ -88,7 +88,7 @@ Você verá que do lado direito você tem algumas pastas, entre em `data > {NOME
 
 vá nessa parte do arquivo
 
-![prompt](./assets/steps/prompt.png)
+![adicionando prompts](./assets/steps/prompt.png)
 
 Adicione em `prompt` o texto que você quer que vire uma imagem. Caso você esteja empolgado, comece a brincar com esses parâmetros. 
 Se não souber por onde começar use algum site, como o [Lexica](https://lexica.art/), para utilizar alguns prompts que a comunidade já usou.
