@@ -104,11 +104,11 @@ Se não souber por onde começar use algum site, como o [Lexica](https://lexica.
 
 ## Notas
 
-1) Na seção `Install xformers from precompiled wheel`, recentemente ocorreram vários erros na instalação, minha solução para esses problemas foi utilizar a versão `não compilada do xformers`, para isso apague o seguinte bloco:
+1) Na seção `Install xformers from precompiled wheel`, recentemente ocorreram vários erros na instalação, minha solução para esses problemas foi utilizar a versão `não compilada do xformers`, para isso adicione um `#` no começo da primeira linha do seguinte bloco:
 
 ![problema do xformers](./assets/steps/xformers_problem.png)
 
-E substitua por:
+Depois remova o primeiro `#` da última linha e adicione aspas ao redor do texto que segue à frente do install, exemplo:
 
 ```bash
 %pip install "git+https://github.com/facebookresearch/xformers@1d31a3a#egg=xformers"
@@ -116,6 +116,8 @@ E substitua por:
 
 Após mudar o bloco e executar, o `pip` irá instalar e compilar o pacote, esse processo pode demorar cerca de `40min`.\
 Caso no final da execução ainda ocorra um erro, abra uma `ISSUE`, assim a comunidade pode tentar te ajudar.
+
+`obs: Coloquei esse código apenas como exemplo, não use essa versão, a não ser que você saiba o que está fazendo. Use o pacote sempre mais recente, ou seja aquele que vem com o código que você abre no Google Colab. Se alguns erros começarem à aparecer, tente clicar de novo no botão do Google Colab do passo 6 e abrir com uma nova versão do xformers. Caso, os erros continuem, abra uma ISSUE.` 
 
 ## Problemas
 
