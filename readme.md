@@ -77,29 +77,51 @@ Você verá que do lado direito você tem algumas pastas, entre em `data > {NOME
 
 ![colocando as imagens na pasta](./assets/steps/images_folder.png)
 
-9) Insira aqui o valor: `stable_diffusion_weights/zwx`
+9) Após adicionar as imagens na pasta coloque o nome da sua token neste local:
+
+![adicionando o token name no script 2](./assets/steps/change_token_name_here_too.png)
+
+10) Insira aqui o valor: `stable_diffusion_weights/zwx`
 
 ![adicionando o caminho para os pesos](./assets/steps/last_modification.png)
 
+11) Na seção `Inference`, mude a variável `model_path` de `WEIGHTS_DIR` para `"stable_diffusion_weights/zwx/800"`
 
-10) rode todas as células apertando `ctrl + F9` ou indo em `Runtime > Run all`
+![mude a variável model_path](./assets/steps/model_path.png)
 
-11) Insira o prompt
+12) rode todas as células apertando `ctrl + F9` ou indo em `Runtime > Run all`
+
+13) Insira o prompt
 
 vá nessa parte do arquivo
 
 ![adicionando prompts](./assets/steps/prompt.png)
 
-Adicione em `prompt` o texto que você quer que vire uma imagem. Caso você esteja empolgado, comece a brincar com esses parâmetros. 
+Adicione em `prompt` o texto que você quer que vire uma imagem. Caso você esteja empolgado, comece a brincar com esses parâmetros.\
 Se não souber por onde começar use algum site, como o [Lexica](https://lexica.art/), para utilizar alguns prompts que a comunidade já usou.
 
 `OBS: lembre-se sempre de adicionar o nome da sua token no texto que você vai colocar como entrada(prompt), dessa forma ele vai, de fato, gerar uma imagem com você`
+
+## Notas
+
+1) Na seção `Install xformers from precompiled wheel`, recentemente ocorreram vários erros na instalação, minha solução para esses problemas foi utilizar a versão `não compilada do xformers`, para isso apague o seguinte bloco:
+
+![problema do xformers](./assets/steps/xformers_problem.png)
+
+E substitua por:
+
+```bash
+%pip install "git+https://github.com/facebookresearch/xformers@1d31a3a#egg=xformers"
+```
+
+Após mudar o bloco e executar, o `pip` irá instalar e compilar o pacote, esse processo pode demorar cerca de `40min`.\
+Caso no final da execução ainda ocorra um erro, abra uma `ISSUE`, assim a comunidade pode tentar te ajudar.
 
 ## Problemas
 
 Caso você encontre alguma dificuldade na execução do tutorial, sinta-se à vontade para abrir uma nova `ISSUE`.
 
-Já se você  encontrou algum problema e sabe como solucionar, também sinta-se à vontade para criar um `PULL REQUEST`.
+Já se você encontrou algum problema e sabe como solucionar, também sinta-se à vontade para criar um `PULL REQUEST`.
 
 `OBS: Tome cuidado para não criar duplicatas`
 
