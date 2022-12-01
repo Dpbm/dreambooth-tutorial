@@ -89,7 +89,7 @@ Você verá que do lado direito você tem algumas pastas, entre em `data > {NOME
 
 ![mude a variável model_path](./assets/steps/model_path.png)
 
-12) rode todas as células apertando `ctrl + F9` ou indo em `Runtime > Run all`
+12) Rode célula a célula até chegar na seção `Run for generating images.`
 
 13) Insira o prompt
 
