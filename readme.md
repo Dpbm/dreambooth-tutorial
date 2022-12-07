@@ -41,6 +41,8 @@ Com isso então, podemos utilizar um modelo já treinado para fazer nossas image
 
 5) Entre [aqui](https://huggingface.co/runwayml/stable-diffusion-v1-5) e clique em aceitar, nessa parte você permite que o modelo interaja com sua conta do `HuggingFace`
 
+`obs: Caso não encontre nenhum botão para aceitar os termos, siga com o tutorial, caso ocorra algum erro no futuro, abra uma ISSUE`
+
 6) Abra o modelo no [Google Colab](https://colab.research.google.com) clicando no botão ao lado
 [![DreamBooth Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb)
 
