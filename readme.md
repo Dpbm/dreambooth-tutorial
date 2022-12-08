@@ -49,7 +49,21 @@ Com isso então, podemos utilizar um modelo já treinado para fazer nossas image
 7) coloque sua token criada no `HuggingFace` aqui:
 ![adicionando a token no script](./assets/steps/add_token.png)
 
-8) chegando nessa parte:
+8) na seção `Install xformers from precompiled wheel.`, apague todas as linhas e substitua por:
+
+```bash
+%pip install -q https://github.com/Dpbm/dreambooth-tutorial/releases/download/07ba3f3/xformers-0.0.15.dev0+07ba3f3.d20221208-cp38-cp38-linux_x86_64.whl
+```
+
+caso ocorra algum problema, troque por:
+
+```bash
+%pip install git+https://github.com/facebookresearch/xformers
+```
+
+obs: esse último comando pode demorar de `40min` à `1h` para terminar.
+
+9) chegando nessa parte:
 
 ![adicionando o token name no script](./assets/steps/change_here_token_name.png)
 
@@ -79,21 +93,21 @@ Você verá que do lado direito você tem algumas pastas, entre em `data > {NOME
 
 ![colocando as imagens na pasta](./assets/steps/images_folder.png)
 
-9) Após adicionar as imagens na pasta coloque o nome da sua token neste local:
+10) Após adicionar as imagens na pasta coloque o nome da sua token neste local:
 
 ![adicionando o token name no script 2](./assets/steps/change_token_name_here_too.png)
 
-10) Insira aqui o valor: `stable_diffusion_weights/zwx`
+11) Insira aqui o valor: `stable_diffusion_weights/zwx`
 
 ![adicionando o caminho para os pesos](./assets/steps/last_modification.png)
 
-11) Na seção `Inference`, mude a variável `model_path` de `WEIGHTS_DIR` para `"stable_diffusion_weights/zwx/800"`
+12) Na seção `Inference`, mude a variável `model_path` de `WEIGHTS_DIR` para `"stable_diffusion_weights/zwx/800"`
 
 ![mude a variável model_path](./assets/steps/model_path.png)
 
-12) Rode célula a célula até chegar na seção `Run for generating images.`
+13) Rode célula a célula até chegar na seção `Run for generating images.`
 
-13) Insira o prompt
+14) Insira o prompt
 
 vá nessa parte do arquivo
 
@@ -104,22 +118,6 @@ Se não souber por onde começar use algum site, como o [Lexica](https://lexica.
 
 `OBS: lembre-se sempre de adicionar o nome da sua token no texto que você vai colocar como entrada(prompt), dessa forma ele vai, de fato, gerar uma imagem com você`
 
-## Notas
-
-1) Na seção `Install xformers from precompiled wheel`, recentemente ocorreram vários erros na instalação, minha solução para esses problemas foi utilizar a versão `não compilada do xformers`, para isso adicione um `#` no começo da primeira linha do seguinte bloco:
-
-![problema do xformers](./assets/steps/xformers_problem.png)
-
-Depois remova o primeiro `#` da última linha e adicione aspas ao redor do texto que segue à frente do install, exemplo:
-
-```bash
-%pip install "git+https://github.com/facebookresearch/xformers@1d31a3a#egg=xformers"
-```
-
-Após mudar o bloco e executar, o `pip` irá instalar e compilar o pacote, esse processo pode demorar cerca de `40min`.\
-Caso no final da execução ainda ocorra um erro, abra uma `ISSUE`, assim a comunidade pode tentar te ajudar.
-
-`obs: Coloquei esse código apenas como exemplo, não use essa versão, a não ser que você saiba o que está fazendo. Use o pacote sempre mais recente, ou seja aquele que vem com o código que você abre no Google Colab. Se alguns erros começarem à aparecer, tente clicar de novo no botão do Google Colab do passo 6 e abrir com uma nova versão do xformers. Caso, os erros continuem, abra uma ISSUE.` 
 
 ## Problemas
 
