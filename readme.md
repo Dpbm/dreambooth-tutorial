@@ -35,7 +35,7 @@ Com isso então, podemos utilizar um modelo já treinado para fazer nossas image
 
 3) Crie uma conta (é gratuito) no [HuggingFace](https://huggingface.co/join) 
 
-![settings no Hugginface](./assets/steps/hugging-face-settings.jpeg)
+![settings no Hugginface](./assets/steps/hugging-face-settings.png)
 
 Confirme seu e-mail!
 
