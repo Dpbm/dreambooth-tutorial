@@ -4,3 +4,4 @@
 !readme.md
 !/assets/steps/*.png
 !.gitignore
+!/notebooks/**
