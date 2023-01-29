@@ -29,15 +29,21 @@ Com isso então, podemos utilizar um modelo já treinado para fazer nossas image
 
 ### Fazendo o Avatar
 
-1) Antes de tudo, tire por volta de `20 fotos suas`, tente enriquecer os detalhes do seu rosto melhorando a iluminação, tirando fotos em vários ângulos, várias poses, etc.
+1) Antes de tudo, tire por volta de `20 fotos suas`, tente enriquecer os detalhes do seu rosto melhorando a iluminação, tirando fotos em vários ângulos, várias poses, várias expressões (alegre, triste, feliz, tédio)  etc.
 
 2) Com as fotos tiradas você deve padronizá-las em um tamanho de `512x512 px`, para deixá-las dessa forma você pode usar [photoshop](https://www.adobe.com/br/products/photoshop.html), [gimp](https://www.gimp.org/), [imagemagick](https://imagemagick.org/index.php), ou quaisquer outros editores e ferramentas disponíveis, eu acabei usando um site chamado [birme](https://www.birme.net/?target_width=512&target_height=512), por agilizar a centralização do rosto.
 
-3) Crie uma conta no [HuggingFace](https://huggingface.co/join)
+3) Crie uma conta (é gratuito) no [HuggingFace](https://huggingface.co/join) 
 
-4) Crie uma token no [HuggingFace](https://huggingface.co/settings/tokens), colocando um nome qualquer para ela e dando a permissão de `escrita(write)` (lembre-se de copiar a token e o nome dela, depois vamos usar essas informações no modelo)
+![settings no Hugginface](./assets/steps/hugging-face-settings.png)
 
-![criando a token](./assets/steps/token.png)
+Confirme seu e-mail!
+
+![Confirme seu email](./assets/steps/confirme.png)
+
+4) Crie um token no [HuggingFace](https://huggingface.co/settings/tokens), colocando um nome qualquer, evitando espaços e simbolos especiais, para ele e dando a permissão de `escrita(write)` (lembre-se de copiar o token e o nome dele, depois vamos usar essas informações no modelo)
+
+![criando o token](./assets/steps/token.png)
 
 5) Entre [aqui](https://huggingface.co/runwayml/stable-diffusion-v1-5) e clique em aceitar, nessa parte você permite que o modelo interaja com sua conta do `HuggingFace`
 
@@ -46,36 +52,41 @@ Com isso então, podemos utilizar um modelo já treinado para fazer nossas image
 6) Abra o modelo no [Google Colab](https://colab.research.google.com) clicando no botão ao lado
 [![DreamBooth Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb)
 
-7) coloque sua token criada no `HuggingFace` aqui:
+7) Sempre verifique se está usando uma GPU(Placa de vídeo poderosa do google), normalmente a Nvidia TESLA T4 com 15gb RAM (10gb para o treinamento do modelo).
+![T4](./assets/steps/t4.png)
+`O google collab fornece um uso básico de GPU por algumas sessões limitadas diariamente depois ele bloqueia e aceita somente o uso de CPU. Não é possível usar CPU para treinar modelos ou gerar imagens.`
+
+8) coloque seu token criado no `HuggingFace` aqui:
 ![adicionando a token no script](./assets/steps/add_token.png)
 
-8) na seção `Install xformers from precompiled wheel.`, apague todas as linhas e substitua por:
+9) Rode a seção `Install Requirements`
+![install](./assets/steps/install1.png)
+Rodado com sucesso!
+![sucesso](./assets/steps/install2.png)
 
-```bash
-%pip install -q https://github.com/Dpbm/dreambooth-tutorial/releases/download/07ba3f3/xformers-0.0.15.dev0+07ba3f3.d20221208-cp38-cp38-linux_x86_64.whl
-```
-
+10) Rode `Install xformers from precompiled wheel.`
+![xformer](./assets/steps/xform1.png)
+Rodado com sucesso!
+![xformer rodado](./assets/steps/xform2.png)
 caso ocorra algum problema, troque por:
-
 ```bash
 %pip install git+https://github.com/facebookresearch/xformers
 ```
-
 obs: esse último comando pode demorar de `40min` à `1h` para terminar.
 
-9) chegando nessa parte:
+11) chegando nessa parte:
 
 ![adicionando o token name no script](./assets/steps/change_here_token_name.png)
 
-mude o código para esse abaixo (lembre de trocar o {NOME_DA_SUA_TOKEN_AQUI} para o nome que você colocou na sua token do `HuggingFace`)
+mude o código para esse abaixo (lembre de trocar o NOME_DA_SUA_TOKEN_AQUI para o nome que você colocou na sua token do `HuggingFace`)
 
 ```python
 concepts_list = [
 
      {
-         "instance_prompt":      "{NOME_DA_SUA_TOKEN_AQUI}",
+         "instance_prompt":      "NOME_DA_SUA_TOKEN_AQUI",
          "class_prompt":         "photo of a person",
-         "instance_data_dir":    "/content/data/{NOME_DA_SUA_TOKEN_AQUI}",
+         "instance_data_dir":    "/content/data/NOME_DA_SUA_TOKEN_AQUI",
          "class_data_dir":       "/content/data/person"
      }
 ]
@@ -89,25 +100,25 @@ with open("concepts_list.json", "w") as f:
     json.dump(concepts_list, f, indent=4)
 ```
 
-Você verá que do lado direito você tem algumas pastas, entre em `data > {NOME_DA_SUA_TOKEN}` e aí dentro você arrasta todas aquelas fotos com `512 x 512 px`
+Você verá que do lado direito você tem algumas pastas, entre em `data > NOME_DA_SUA_TOKEN` e aí dentro você arrasta todas aquelas fotos com `512 x 512 px`
 
 ![colocando as imagens na pasta](./assets/steps/images_folder.png)
 
-10) Após adicionar as imagens na pasta coloque o nome da sua token neste local:
+12) Após adicionar as imagens na pasta coloque o nome da sua token neste local:
 
 ![adicionando o token name no script 2](./assets/steps/change_token_name_here_too.png)
 
-11) Insira aqui o valor: `stable_diffusion_weights/zwx`
+13) Insira aqui o valor: `stable_diffusion_weights/zwx`
 
 ![adicionando o caminho para os pesos](./assets/steps/last_modification.png)
 
-12) Na seção `Inference`, mude a variável `model_path` de `WEIGHTS_DIR` para `"stable_diffusion_weights/zwx/800"`
+14) Na seção `Inference`, mude a variável `model_path` de `WEIGHTS_DIR` para `"stable_diffusion_weights/zwx/800"`
 
 ![mude a variável model_path](./assets/steps/model_path.png)
 
-13) Rode célula a célula até chegar na seção `Run for generating images.`
+15) Rode célula a célula até chegar na seção `Run for generating images.`
 
-14) Insira o prompt
+16) Insira o prompt
 
 vá nessa parte do arquivo
 
@@ -120,6 +131,12 @@ Se não souber por onde começar use algum site, como o [Lexica](https://lexica.
 
 
 ## Problemas
+
+### Problema de Falta de GPU
+
+Caso você não consiga acessar uma GPU significa que você deverá esperar no mínimo 12 horas para voltar usar a GPU. Você pode comprar um plano de uso do Google collab com mais tempo de GPU aqui: [PRO Collab](https://colab.research.google.com/signup/pricing)
+
+#### ______________________________________________________________
 
 Caso você encontre alguma dificuldade na execução do tutorial, sinta-se à vontade para abrir uma nova `ISSUE`.
 
