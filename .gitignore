@@ -2,6 +2,9 @@
 .hidden
 !/**/
 !readme.md
-!/assets/steps/*.png
+!/old-tutorial/**/*
+!/assets/*.png
 !.gitignore
 !/notebooks/**
+
+.ipynb_checkpoints
