@@ -3,6 +3,7 @@
 * [Criando Imagens Diversas](#criando-imagens-diversas)
 * [Por trás dos panos](#por-trás-dos-panos)
 * [Comece a criar](#comece-a-criar-suas-imagens)
+* [Conheça mais](#conheça-mais)
 * [créditos](#créditos)
 
 # Criando avatares com IA
@@ -42,6 +43,13 @@ Para começar o tutorial, clique nesse botão abaixo
 [![DreamBooth Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Dpbm/dreambooth-tutorial/blob/main/notebooks/dreambooth.ipynb)
 
 Se você está procurando o tutorial antigo [clique aqui](./old-tutorial/readme.md)
+
+## Conheça mais
+
+Se você se interessar por essas inteligências artificiais, de uma olhada nessa lista de repositórios que criei.\
+Nela você encontrará ferramentas, modelos e outros apanhados de repositórios úteis.
+[Lista de repositórios](https://github.com/stars/Dpbm/lists/generate-images-ai)
+
 
 ## Créditos
 
