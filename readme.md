@@ -47,7 +47,7 @@ Se você está procurando o tutorial antigo [clique aqui](./old-tutorial/readme.
 ## Conheça mais
 
 Se você se interessar por essas inteligências artificiais, de uma olhada nessa lista de repositórios que criei.\
-Nela você encontrará ferramentas, modelos e outros apanhados de repositórios úteis.
+Nela você encontrará ferramentas, modelos e outros apanhados de repositórios úteis.\
 [Lista de repositórios](https://github.com/stars/Dpbm/lists/generate-images-ai)
 
 
